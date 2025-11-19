@@ -1,9 +1,9 @@
-#Sun Apr 27 19:34:41 PET 2025
-base.0=/home/yeremi/Documents/red_pata/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/home/yeremi/Documents/red_pata/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
-base.2=/home/yeremi/Documents/red_pata/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.3=/home/yeremi/Documents/red_pata/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
-base.4=/home/yeremi/Documents/red_pata/build/app/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
+#Tue Nov 18 21:10:04 PET 2025
+base.0=/home/yeremi/Documents/ProyectosGitHub/RedPata/build/app/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/home/yeremi/Documents/ProyectosGitHub/RedPata/build/app/intermediates/dex/debug/mergeLibDexDebug/0/classes.dex
+base.2=/home/yeremi/Documents/ProyectosGitHub/RedPata/build/app/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.3=/home/yeremi/Documents/ProyectosGitHub/RedPata/build/app/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
+base.4=/home/yeremi/Documents/ProyectosGitHub/RedPata/build/app/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=0/classes.dex

@@ -1,7 +1,7 @@
 -- Merging decision tree log ---
 application
-INJECTED from /home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:8:5-36:19
-INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:8:5-36:19
+INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml
 MERGED from [androidx.window:window:1.2.0] /home/yeremi/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:22:5-29:19
 MERGED from [androidx.window:window:1.2.0] /home/yeremi/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:22:5-29:19
 MERGED from [androidx.core:core:1.13.1] /home/yeremi/.gradle/caches/8.10.2/transforms/8cf478dec41eed746328fa8046755ba2/transformed/core-1.13.1/AndroidManifest.xml:28:5-89
@@ -15,19 +15,19 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/yeremi/.gradle/caches
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/yeremi/.gradle/caches/8.10.2/transforms/92a2169b5b2674c8bbe10e1b1d80da0f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/yeremi/.gradle/caches/8.10.2/transforms/92a2169b5b2674c8bbe10e1b1d80da0f/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
 	android:extractNativeLibs
-		INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.13.1] /home/yeremi/.gradle/caches/8.10.2/transforms/8cf478dec41eed746328fa8046755ba2/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
 	android:name
-		INJECTED from /home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml
 manifest
-ADDED from /home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:1:1-37:12
-MERGED from /home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:1:1-37:12
-INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml:1:1-7:12
-MERGED from [:network_info_plus] /home/yeremi/Documents/red_pata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-10:12
-MERGED from [:permission_handler_android] /home/yeremi/Documents/red_pata/build/permission_handler_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
+ADDED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:1:1-37:12
+MERGED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:1:1-37:12
+INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml:1:1-7:12
+MERGED from [:network_info_plus] /home/yeremi/Documents/ProyectosGitHub/RedPata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-10:12
+MERGED from [:permission_handler_android] /home/yeremi/Documents/ProyectosGitHub/RedPata/build/permission_handler_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment:1.7.1] /home/yeremi/.gradle/caches/8.10.2/transforms/55520e4df2220e27f13f0bbb7467d11a/transformed/fragment-1.7.1/AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.window:window:1.2.0] /home/yeremi/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.window:window-java:1.2.0] /home/yeremi/.gradle/caches/8.10.2/transforms/c1f85211ae6978d0218d51595a7f7e62/transformed/jetified-window-java-1.2.0/AndroidManifest.xml:17:1-21:12
@@ -55,39 +55,39 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /home/yeremi/.gradle/cach
 MERGED from [androidx.window.extensions.core:core:1.0.0] /home/yeremi/.gradle/caches/8.10.2/transforms/47506b70b93177473c53f4d5d7e77c91/transformed/jetified-core-1.0.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] /home/yeremi/.gradle/caches/8.10.2/transforms/9e1412f82216e9a99f9f845f4567c1f2/transformed/jetified-relinker-1.4.5/AndroidManifest.xml:2:1-7:12
 	package
-		INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:4:5-79
+ADDED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:4:5-79
 	android:name
-		ADDED from /home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:4:22-76
+		ADDED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:4:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:5:5-81
+ADDED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:5:5-81
 	android:name
-		ADDED from /home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:5:22-78
+		ADDED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:5:22-78
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:6:5-76
-MERGED from [:network_info_plus] /home/yeremi/Documents/red_pata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:5-76
-MERGED from [:network_info_plus] /home/yeremi/Documents/red_pata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:5-76
+ADDED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:6:5-76
+MERGED from [:network_info_plus] /home/yeremi/Documents/ProyectosGitHub/RedPata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:5-76
+MERGED from [:network_info_plus] /home/yeremi/Documents/ProyectosGitHub/RedPata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:8:5-76
 	android:name
-		ADDED from /home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:6:22-73
+		ADDED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:6:22-73
 uses-permission#android.permission.INTERNET
-ADDED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml:6:5-66
+ADDED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml:6:5-66
 	android:name
-		ADDED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml:6:22-64
+		ADDED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml:6:22-64
 uses-sdk
-INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml
-INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml
-MERGED from [:network_info_plus] /home/yeremi/Documents/red_pata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
-MERGED from [:network_info_plus] /home/yeremi/Documents/red_pata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
-MERGED from [:permission_handler_android] /home/yeremi/Documents/red_pata/build/permission_handler_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
-MERGED from [:permission_handler_android] /home/yeremi/Documents/red_pata/build/permission_handler_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml
+INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml
+MERGED from [:network_info_plus] /home/yeremi/Documents/ProyectosGitHub/RedPata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:network_info_plus] /home/yeremi/Documents/ProyectosGitHub/RedPata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler_android] /home/yeremi/Documents/ProyectosGitHub/RedPata/build/permission_handler_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
+MERGED from [:permission_handler_android] /home/yeremi/Documents/ProyectosGitHub/RedPata/build/permission_handler_android/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.7.1] /home/yeremi/.gradle/caches/8.10.2/transforms/55520e4df2220e27f13f0bbb7467d11a/transformed/fragment-1.7.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.7.1] /home/yeremi/.gradle/caches/8.10.2/transforms/55520e4df2220e27f13f0bbb7467d11a/transformed/fragment-1.7.1/AndroidManifest.xml:5:5-44
 MERGED from [androidx.window:window:1.2.0] /home/yeremi/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:20:5-44
@@ -141,13 +141,13 @@ MERGED from [androidx.window.extensions.core:core:1.0.0] /home/yeremi/.gradle/ca
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] /home/yeremi/.gradle/caches/8.10.2/transforms/9e1412f82216e9a99f9f845f4567c1f2/transformed/jetified-relinker-1.4.5/AndroidManifest.xml:5:5-43
 MERGED from [com.getkeepsafe.relinker:relinker:1.4.5] /home/yeremi/.gradle/caches/8.10.2/transforms/9e1412f82216e9a99f9f845f4567c1f2/transformed/jetified-relinker-1.4.5/AndroidManifest.xml:5:5-43
 	android:targetSdkVersion
-		INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml
+		INJECTED from /home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:network_info_plus] /home/yeremi/Documents/red_pata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-79
+ADDED from [:network_info_plus] /home/yeremi/Documents/ProyectosGitHub/RedPata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from [:network_info_plus] /home/yeremi/Documents/red_pata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:22-76
+		ADDED from [:network_info_plus] /home/yeremi/Documents/ProyectosGitHub/RedPata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:22-76
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.2.0] /home/yeremi/.gradle/caches/8.10.2/transforms/5093ab42d2307deb2d7ac0b7f5718c38/transformed/jetified-window-1.2.0/AndroidManifest.xml:23:9-25:40
 	android:required

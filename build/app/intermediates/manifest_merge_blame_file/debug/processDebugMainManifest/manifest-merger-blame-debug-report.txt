@@ -13,21 +13,21 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->/home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml:6:5-66
-15-->/home/yeremi/Documents/red_pata/android/app/src/debug/AndroidManifest.xml:6:22-64
+15-->/home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml:6:5-66
+15-->/home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/debug/AndroidManifest.xml:6:22-64
 16    <!-- PERMISOS NECESARIOS -->
 17    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-17-->/home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:4:5-79
-17-->/home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:4:22-76
+17-->/home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:4:5-79
+17-->/home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:4:22-76
 18    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-18-->/home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:5:5-81
-18-->/home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:5:22-78
+18-->/home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:5:5-81
+18-->/home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:5:22-78
 19    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-19-->/home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:6:5-76
-19-->/home/yeremi/Documents/red_pata/android/app/src/main/AndroidManifest.xml:6:22-73
+19-->/home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:6:5-76
+19-->/home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/AndroidManifest.xml:6:22-73
 20    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-20-->[:network_info_plus] /home/yeremi/Documents/red_pata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-79
-20-->[:network_info_plus] /home/yeremi/Documents/red_pata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:22-76
+20-->[:network_info_plus] /home/yeremi/Documents/ProyectosGitHub/RedPata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:5-79
+20-->[:network_info_plus] /home/yeremi/Documents/ProyectosGitHub/RedPata/build/network_info_plus/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:7:22-76
 21
 22    <permission
 22-->[androidx.core:core:1.13.1] /home/yeremi/.gradle/caches/8.10.2/transforms/8cf478dec41eed746328fa8046755ba2/transformed/core-1.13.1/AndroidManifest.xml:22:5-24:47

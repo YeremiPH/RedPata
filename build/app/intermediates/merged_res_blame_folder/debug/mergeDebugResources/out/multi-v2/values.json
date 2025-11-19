@@ -74,7 +74,7 @@
                     }
                 },
                 {
-                    "source": "/home/yeremi/Documents/red_pata/android/app/src/main/res/values/styles.xml",
+                    "source": "/home/yeremi/Documents/ProyectosGitHub/RedPata/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
