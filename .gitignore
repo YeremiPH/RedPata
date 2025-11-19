@@ -1,0 +1,42 @@
+# Flutter/Dart/Pub
+.dart_tool/
+.packages
+/.pub-cache/
+pubspec.lock
+
+# Build outputs
+/build/
+/ios/Flutter/Flutter.framework
+/ios/Flutter/Flutter.podspec
+/ios/Pods/
+/ios/Runner.xcworkspace/
+*.app
+*.apk
+*.aar
+
+# Android/IntelliJ
+/android/.gradle/
+/.idea/
+*.iml
+
+# VS Code
+/.vscode/
+
+# Generated plugin registrant
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Generated files
+/.flutter-plugins
+/.flutter-plugins-dependencies
+/.metadata
+
+# Logs
+flutter_run_device.log
+*.log
+
+# OS files
+._*
+Thumbs.db
+desktop.ini
+``` 
