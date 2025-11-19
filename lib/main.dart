@@ -24,7 +24,12 @@ class MyApp extends StatelessWidget {
 }
 
 class WifiInfoScreen extends StatefulWidget {
-  const WifiInfoScreen({super.key});
+  // skipInit: si es true, no llamará a _loadWifiInfo en initState.
+  // Esto facilita las pruebas unitarias donde los plugins de plataforma
+  // no están disponibles.
+  const WifiInfoScreen({super.key, this.skipInit = false});
+
+  final bool skipInit;
 
   @override
   State<WifiInfoScreen> createState() => _WifiInfoScreenState();
@@ -41,7 +46,10 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
   @override
   void initState() {
     super.initState();
-    _loadWifiInfo();
+    // Solo cargamos la información si no estamos en modo "skipInit".
+    if (!widget.skipInit) {
+      _loadWifiInfo();
+    }
   }
 
   Future<void> _loadWifiInfo() async {
