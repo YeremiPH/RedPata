@@ -6,8 +6,8 @@
 // @dart = 3.7
 
 import 'dart:io'; // flutter_ignore: dart_io_import.
-import 'package:network_info_plus/network_info_plus.dart';
-import 'package:network_info_plus/network_info_plus.dart';
+import 'package:network_info_plus/network_info_plus.dart' as network_info_plus;
+import 'package:network_info_plus/network_info_plus.dart' as network_info_plus;
 
 @pragma('vm:entry-point')
 class _PluginRegistrant {
@@ -18,7 +18,7 @@ class _PluginRegistrant {
     } else if (Platform.isIOS) {
     } else if (Platform.isLinux) {
       try {
-        NetworkInfoPlusLinuxPlugin.registerWith();
+        network_info_plus.NetworkInfoPlusLinuxPlugin.registerWith();
       } catch (err) {
         print(
           '`network_info_plus` threw an error: $err. '
@@ -29,7 +29,7 @@ class _PluginRegistrant {
     } else if (Platform.isMacOS) {
     } else if (Platform.isWindows) {
       try {
-        NetworkInfoPlusWindowsPlugin.registerWith();
+        network_info_plus.NetworkInfoPlusWindowsPlugin.registerWith();
       } catch (err) {
         print(
           '`network_info_plus` threw an error: $err. '
