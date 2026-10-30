@@ -61,31 +61,40 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
     try {
       final permissionStatus = await Permission.location.request();
 
-      if (permissionStatus.isGranted) {
-        final name = await info.getWifiName() ?? 'Desconocido';
-        final bssid = await info.getWifiBSSID() ?? 'Desconocido';
-        final ip = await info.getWifiIP() ?? 'Desconocido';
+      if (!mounted) return;
 
-        setState(() {
-          wifiName = name;
-          wifiBSSID = bssid;
-          wifiIP = ip;
-        });
-      } else if (permissionStatus.isDenied) {
+      if (!permissionStatus.isGranted) {
         setState(() {
           wifiName = 'Permiso denegado';
           wifiBSSID = '-';
           wifiIP = '-';
         });
+        return;
       }
+
+      final name = await info.getWifiName() ?? 'Desconocido';
+      final bssid = await info.getWifiBSSID() ?? 'Desconocido';
+      final ip = await info.getWifiIP() ?? 'Desconocido';
+
+      if (!mounted) return;
+
+      setState(() {
+        wifiName = name;
+        wifiBSSID = bssid;
+        wifiIP = ip;
+      });
     } catch (e) {
-      setState(() {
-        errorMessage = 'Error al obtener datos WiFi: ${e.toString()}';
-      });
+      if (mounted) {
+        setState(() {
+          errorMessage = 'Error al obtener datos WiFi: ${e.toString()}';
+        });
+      }
     } finally {
-      setState(() {
-        isLoading = false;
-      });
+      if (mounted) {
+        setState(() {
+          isLoading = false;
+        });
+      }
     }
   }
 
