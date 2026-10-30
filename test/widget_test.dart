@@ -20,7 +20,15 @@ void main() {
 
     await tester.tap(find.text('COMENZAR'));
     await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+
+    expect(find.text('ENTENDIDO'), findsOneWidget);
+
+    await tester.tap(find.text('ENTENDIDO'));
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
 
     expect(find.text('RED PATA'), findsOneWidget);
+    expect(find.text('Activar ubicación'), findsOneWidget);
   });
 }

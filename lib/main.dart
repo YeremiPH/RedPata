@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:network_info_plus/network_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 
@@ -28,7 +29,7 @@ class WelcomeScreen extends StatelessWidget {
 
   void _start(BuildContext context) {
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute<void>(builder: (_) => const WifiInfoScreen()),
+      MaterialPageRoute<void>(builder: (_) => const IntroScreen()),
     );
   }
 
@@ -334,6 +335,133 @@ class WelcomeScreen extends StatelessWidget {
   }
 }
 
+class IntroScreen extends StatelessWidget {
+  const IntroScreen({super.key});
+
+  void _continue(BuildContext context) {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute<void>(builder: (_) => const WifiInfoScreen()),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    const textStyle = TextStyle(
+      fontFamily: 'serif',
+      fontSize: 15,
+      fontWeight: FontWeight.bold,
+      height: 1.35,
+      color: Colors.black87,
+    );
+
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              height: 190,
+              width: double.infinity,
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [Color(0xFF111827), Color(0xFF1D4ED8), Colors.red],
+                ),
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.elliptical(260, 60),
+                ),
+              ),
+              child: const Icon(Icons.dns, size: 86, color: Colors.white54),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(24, 0, 24, 8),
+                child: Transform.translate(
+                  offset: const Offset(0, -34),
+                  child: Container(
+                    padding: const EdgeInsets.all(20),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFD3D3D3),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          const Text(
+                            'REDPATA',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 26,
+                              fontWeight: FontWeight.w900,
+                              letterSpacing: 3,
+                            ),
+                          ),
+                          const SizedBox(height: 18),
+                          const Text(
+                            'Esta aplicación te ayudará a conocer mejor tu red '
+                            'WiFi. Podrás ver el nombre de tu router, tu IP '
+                            'local, la intensidad de la señal y mucho más.',
+                            textAlign: TextAlign.justify,
+                            style: textStyle,
+                          ),
+                          const SizedBox(height: 22),
+                          const Text(
+                            'También podrás configurar tu red WiFi desde la '
+                            'app, acceder a manuales de instalación y '
+                            'configuración de tu router, y mantenerte '
+                            'informado con una sección de noticias sobre '
+                            'seguridad en redes WiFi.',
+                            textAlign: TextAlign.justify,
+                            style: textStyle,
+                          ),
+                          const SizedBox(height: 24),
+                          const Icon(
+                            Icons.wifi,
+                            size: 42,
+                            color: Color(0xFF2B6F8E),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(bottom: 24),
+              child: SizedBox(
+                width: 230,
+                height: 56,
+                child: OutlinedButton(
+                  onPressed: () => _continue(context),
+                  style: OutlinedButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    foregroundColor: Colors.black,
+                    side: const BorderSide(color: Colors.black, width: 2),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32),
+                    ),
+                  ),
+                  child: const Text(
+                    'ENTENDIDO',
+                    style: TextStyle(
+                      fontFamily: 'serif',
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class WifiInfoScreen extends StatefulWidget {
   // skipInit: si es true, no llamará a _loadWifiInfo en initState.
   // Esto facilita las pruebas unitarias donde los plugins de plataforma
@@ -352,14 +480,28 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
   String wifiBSSID = 'Desconocido';
   String wifiIP = 'Desconocido';
   bool isLoading = false;
+  bool locationActivated = false;
   String? errorMessage;
 
   @override
   void initState() {
     super.initState();
-    // Solo cargamos la información si no estamos en modo "skipInit".
+    // Si la ubicación ya está lista (permiso y servicio), mostramos los datos
+    // directamente; si no, se pide con el botón "Activar ubicación".
     if (!widget.skipInit) {
-      _loadWifiInfo();
+      _checkLocationReady();
+    }
+  }
+
+  Future<void> _checkLocationReady() async {
+    try {
+      final granted = await Permission.location.isGranted;
+      final enabled = await Permission.location.serviceStatus.isEnabled;
+      if (granted && enabled && mounted) {
+        _loadWifiInfo();
+      }
+    } catch (_) {
+      // Sin plugin disponible: se queda la pantalla de activación.
     }
   }
 
@@ -387,14 +529,15 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
           await Permission.location.serviceStatus.isEnabled;
 
       if (!locationServiceEnabled) {
+        await Geolocator.openLocationSettings();
         if (!mounted) return;
         setState(() {
-          errorMessage =
-              'Activa la ubicación del dispositivo para que Android permita '
-              'leer el nombre de la red Wi-Fi.';
+          locationActivated = false;
         });
         return;
       }
+
+      locationActivated = true;
 
       final name = await info.getWifiName();
       final bssid = await info.getWifiBSSID() ?? 'Desconocido';
@@ -516,6 +659,41 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
                           errorMessage!,
                           style: const TextStyle(color: Colors.red),
                           textAlign: TextAlign.center,
+                        ),
+                      ),
+                    )
+                    : !locationActivated && wifiName != 'Permiso denegado'
+                    ? Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(24),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.location_on,
+                              size: 72,
+                              color: Colors.blueAccent,
+                            ),
+                            const SizedBox(height: 20),
+                            const Text(
+                              'Para mostrar la información de tu red WiFi '
+                              'necesitamos activar la ubicación.',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 16),
+                            ),
+                            const SizedBox(height: 24),
+                            ElevatedButton.icon(
+                              onPressed: _loadWifiInfo,
+                              icon: const Icon(Icons.location_searching),
+                              label: const Text('Activar ubicación'),
+                              style: ElevatedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 24,
+                                  vertical: 14,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     )
