@@ -18,7 +18,318 @@ class MyApp extends StatelessWidget {
           secondary: Colors.lightBlue[300]!,
         ),
       ),
-      home: const WifiInfoScreen(),
+      home: const WelcomeScreen(),
+    );
+  }
+}
+
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
+
+  void _start(BuildContext context) {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute<void>(builder: (_) => const WifiInfoScreen()),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: DecoratedBox(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Color(0xFF172019), Color(0xFF54503D), Color(0xFFE9A64F)],
+          ),
+        ),
+        child: Stack(
+          children: [
+            Positioned(
+              top: 90,
+              left: -100,
+              child: Container(
+                width: 240,
+                height: 240,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.lightGreen.withValues(alpha: 0.12),
+                ),
+              ),
+            ),
+            SafeArea(
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(20, 32, 20, 12),
+                    child: Text(
+                      'BIENVENIDO A REDPATA',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontFamily: 'serif',
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                        shadows: [
+                          Shadow(
+                            color: Colors.black54,
+                            blurRadius: 8,
+                            offset: Offset(0, 3),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        final phoneHeight =
+                            constraints.maxHeight < 360
+                                ? constraints.maxHeight * 0.72
+                                : 300.0;
+                        final routerWidth =
+                            constraints.maxWidth < 320
+                                ? constraints.maxWidth * 0.88
+                                : 280.0;
+
+                        return Stack(
+                          alignment: Alignment.center,
+                          children: [
+                            Positioned(
+                              bottom: 80,
+                              left: constraints.maxWidth * 0.17,
+                              child: _buildAntenna(-0.15),
+                            ),
+                            Positioned(
+                              bottom: 80,
+                              left: constraints.maxWidth * 0.48,
+                              child: _buildAntenna(0),
+                            ),
+                            Positioned(
+                              bottom: 80,
+                              right: constraints.maxWidth * 0.17,
+                              child: _buildAntenna(0.15),
+                            ),
+                            Positioned(
+                              bottom: 38,
+                              child: Container(
+                                width: routerWidth,
+                                height: 64,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(14),
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color(0xFFE7E2D3),
+                                      Color(0xFFA8A18D),
+                                    ],
+                                  ),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Colors.black45,
+                                      blurRadius: 22,
+                                      offset: Offset(0, 14),
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    const Icon(
+                                      Icons.wifi,
+                                      color: Color(0xFF263B49),
+                                      size: 32,
+                                    ),
+                                    const SizedBox(width: 14),
+                                    Text(
+                                      'REDPATA',
+                                      style: TextStyle(
+                                        color: Colors.blueGrey.shade900,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 2,
+                                      ),
+                                    ),
+                                    const SizedBox(width: 14),
+                                    const Icon(
+                                      Icons.circle,
+                                      color: Color(0xFFFFB443),
+                                      size: 8,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              bottom: 66,
+                              child: Container(
+                                width: phoneHeight * 0.55,
+                                height: phoneHeight,
+                                padding: const EdgeInsets.all(8),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFF11151B),
+                                  borderRadius: BorderRadius.circular(28),
+                                  border: Border.all(
+                                    color: Colors.black,
+                                    width: 2,
+                                  ),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      color: Colors.black54,
+                                      blurRadius: 24,
+                                      offset: Offset(0, 12),
+                                    ),
+                                  ],
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(21),
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      gradient: LinearGradient(
+                                        begin: Alignment.topLeft,
+                                        end: Alignment.bottomRight,
+                                        colors: [
+                                          Color(0xFF55B5DB),
+                                          Color(0xFFB88DC4),
+                                          Color(0xFFE5A68B),
+                                        ],
+                                      ),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          width: 56,
+                                          height: 13,
+                                          decoration: const BoxDecoration(
+                                            color: Color(0xFF11151B),
+                                            borderRadius: BorderRadius.vertical(
+                                              bottom: Radius.circular(10),
+                                            ),
+                                          ),
+                                        ),
+                                        const Spacer(),
+                                        const Icon(
+                                          Icons.wifi,
+                                          size: 66,
+                                          color: Color(0xFF102E3C),
+                                          shadows: [
+                                            Shadow(
+                                              color: Colors.white70,
+                                              blurRadius: 12,
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 4),
+                                        const Text(
+                                          'RED PATA',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.w900,
+                                            letterSpacing: 1,
+                                            shadows: [
+                                              Shadow(
+                                                color: Colors.black54,
+                                                blurRadius: 8,
+                                                offset: Offset(0, 3),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        const Spacer(),
+                                        Container(
+                                          height: 18,
+                                          margin: const EdgeInsets.symmetric(
+                                            horizontal: 18,
+                                          ),
+                                          decoration: BoxDecoration(
+                                            color: const Color(0xFF2C3945),
+                                            borderRadius: BorderRadius.circular(
+                                              8,
+                                            ),
+                                          ),
+                                        ),
+                                        const SizedBox(height: 16),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(24, 12, 24, 28),
+                    child: SizedBox(
+                      width: 230,
+                      height: 58,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(32),
+                          gradient: const LinearGradient(
+                            colors: [Color(0xFFFFD98A), Color(0xFFFFF0C8)],
+                          ),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Colors.black38,
+                              blurRadius: 14,
+                              offset: Offset(0, 7),
+                            ),
+                          ],
+                        ),
+                        child: Material(
+                          color: Colors.transparent,
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(32),
+                            onTap: () => _start(context),
+                            child: const Center(
+                              child: Text(
+                                'COMENZAR',
+                                style: TextStyle(
+                                  fontFamily: 'serif',
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic,
+                                  color: Color(0xFF21180F),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAntenna(double angle) {
+    return Transform.rotate(
+      angle: angle,
+      child: Container(
+        width: 8,
+        height: 122,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          gradient: const LinearGradient(
+            colors: [Color(0xFFFFF4D6), Color(0xFF9C927A)],
+          ),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black38,
+              blurRadius: 8,
+              offset: Offset(2, 3),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
