@@ -21,6 +21,6 @@ void main() {
     );
 
     // Verificamos que el título de la AppBar está presente.
-    expect(find.text('Analizador WiFi'), findsOneWidget);
+    expect(find.text('RED PATA'), findsOneWidget);
   });
 }

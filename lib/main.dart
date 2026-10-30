@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Analizador WiFi',
+      title: 'RED PATA',
       theme: ThemeData.dark().copyWith(
         colorScheme: ColorScheme.dark(
           primary: Colors.blueAccent,
@@ -72,16 +72,35 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
         return;
       }
 
-      final name = await info.getWifiName() ?? 'Desconocido';
+      final locationServiceEnabled =
+          await Permission.location.serviceStatus.isEnabled;
+
+      if (!locationServiceEnabled) {
+        if (!mounted) return;
+        setState(() {
+          errorMessage =
+              'Activa la ubicación del dispositivo para que Android permita '
+              'leer el nombre de la red Wi-Fi.';
+        });
+        return;
+      }
+
+      final name = await info.getWifiName();
       final bssid = await info.getWifiBSSID() ?? 'Desconocido';
       final ip = await info.getWifiIP() ?? 'Desconocido';
+      final wifiNameUnavailable = name == null || name == '<unknown ssid>';
 
       if (!mounted) return;
 
       setState(() {
-        wifiName = name;
+        wifiName = wifiNameUnavailable ? 'No disponible' : name;
         wifiBSSID = bssid;
         wifiIP = ip;
+        if (wifiNameUnavailable) {
+          errorMessage =
+              'No se pudo leer el nombre de la red. Comprueba que estés '
+              'conectado a Wi-Fi y que la app tenga permiso de ubicación.';
+        }
       });
     } catch (e) {
       if (mounted) {
@@ -124,7 +143,7 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Analizador WiFi'),
+        title: const Text('RED PATA'),
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
