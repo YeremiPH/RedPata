@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:network_info_plus/network_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'router_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -772,6 +773,10 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
                 label: 'Red',
               ),
               BottomNavigationBarItem(
+                icon: Icon(Icons.router),
+                label: 'Router',
+              ),
+              BottomNavigationBarItem(
                 icon: Icon(Icons.speed),
                 label: 'Velocidad',
               ),
@@ -781,6 +786,12 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
               ),
             ],
             onTap: (index) {
+              if (index == 2) {
+                Navigator.of(context).push(
+                  MaterialPageRoute<void>(builder: (_) => const RouterScreen()),
+                );
+                return;
+              }
               // Aquí puedes implementar la navegación entre vistas
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text('Sección ${index + 1} en desarrollo')),
