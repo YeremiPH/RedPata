@@ -482,6 +482,8 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
   String wifiIP = 'Desconocido';
   bool isLoading = false;
   bool locationActivated = false;
+  int _tab = 0;
+  final _routerKey = GlobalKey<RouterViewState>();
   String? errorMessage;
 
   @override
@@ -602,7 +604,10 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
         actions: [
           IconButton(
             icon: const Icon(Icons.refresh),
-            onPressed: isLoading ? null : _loadWifiInfo,
+            onPressed:
+                _tab == 2
+                    ? () => _routerKey.currentState?.reload()
+                    : (isLoading ? null : _loadWifiInfo),
           ),
           IconButton(
             icon: const Icon(Icons.info_outline),
@@ -650,7 +655,9 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
         children: [
           Expanded(
             child:
-                isLoading
+                _tab == 2
+                    ? RouterView(key: _routerKey)
+                    : isLoading
                     ? const Center(child: CircularProgressIndicator())
                     : errorMessage != null
                     ? Center(
@@ -785,14 +792,12 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
                 label: 'Seguridad',
               ),
             ],
+            currentIndex: _tab,
             onTap: (index) {
-              if (index == 2) {
-                Navigator.of(context).push(
-                  MaterialPageRoute<void>(builder: (_) => const RouterScreen()),
-                );
+              if (index == 0 || index == 2) {
+                setState(() => _tab = index);
                 return;
               }
-              // Aquí puedes implementar la navegación entre vistas
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(content: Text('Sección ${index + 1} en desarrollo')),
               );
