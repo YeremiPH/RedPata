@@ -3,6 +3,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:network_info_plus/network_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'router_screen.dart';
+import 'speed_view.dart';
 
 void main() => runApp(const MyApp());
 
@@ -484,6 +485,7 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
   bool locationActivated = false;
   int _tab = 0;
   final _routerKey = GlobalKey<RouterViewState>();
+  final _speedKey = GlobalKey<SpeedViewState>();
   String? errorMessage;
 
   @override
@@ -607,6 +609,8 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
             onPressed:
                 _tab == 2
                     ? () => _routerKey.currentState?.reload()
+                    : _tab == 3
+                    ? () => _speedKey.currentState?.start()
                     : (isLoading ? null : _loadWifiInfo),
           ),
           IconButton(
@@ -657,6 +661,8 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
             child:
                 _tab == 2
                     ? RouterView(key: _routerKey)
+                    : _tab == 3
+                    ? SpeedView(key: _speedKey)
                     : isLoading
                     ? const Center(child: CircularProgressIndicator())
                     : errorMessage != null
@@ -755,29 +761,33 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
                           Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 16),
                             child: ElevatedButton(
-                              onPressed: () {
-                                // Aquí podrías añadir funcionalidad adicional
-                                // como un escaneo de red o test de velocidad
-                              },
+                              onPressed: () => setState(() => _tab = 3),
                               child: const Text('Realizar test de velocidad'),
                             ),
                           ),
                       ],
                     ),
           ),
+          /*const Padding(
+            padding: EdgeInsets.symmetric(vertical: 6),
+            child: Text(
+              'DevYeremi',
+              style: TextStyle(fontSize: 12, color: Colors.grey),
+            ),
+          ),*/
           BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             selectedItemColor: Colors.blueAccent,
             unselectedItemColor: Colors.blue[200],
             backgroundColor: Colors.black87,
-            items: const [
-              BottomNavigationBarItem(
+            items: [
+              const BottomNavigationBarItem(
                 icon: Icon(Icons.network_wifi),
                 label: 'WiFi',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.device_hub),
-                label: 'Red',
+                icon: Image.asset('assets/manual.png', width: 28, height: 28),
+                label: 'Manual',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.router),
@@ -794,7 +804,7 @@ class _WifiInfoScreenState extends State<WifiInfoScreen> {
             ],
             currentIndex: _tab,
             onTap: (index) {
-              if (index == 0 || index == 2) {
+              if (index == 0 || index == 2 || index == 3) {
                 setState(() => _tab = index);
                 return;
               }
